@@ -1,0 +1,238 @@
+<!doctype html>
+<html lang="id"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><title>Muhiba Motor Service</title>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+#mms{--ink:#1b1b1b;--p:#ffc9d9;--m:#bff0d4;--y:#fff0a0;--b:#c4dcff;--l:#dccbff;--o:#ffd3ad;--z:1;font-family:'Space Grotesk',system-ui,sans-serif;color:var(--ink);background:#fffaf0 radial-gradient(rgba(27,27,27,.2) 1px,transparent 1.5px) 0 0/16px 16px;padding:8px;width:100%;max-width:1100px;margin:0 auto;box-sizing:border-box;border:3px solid var(--ink);font-size:calc(16px*var(--z));line-height:1.5;overflow-x:hidden;overflow-wrap:anywhere;-webkit-text-size-adjust:100%;text-size-adjust:100%;container-type:inline-size;text-align:left}
+#mms *{box-sizing:border-box;min-width:0}
+#mms,#mms h1,#mms h2,#mms h3,#mms p,#mms a,#mms button,#mms label,#mms input,#mms select,#mms textarea,#mms li,#mms summary{font-family:'Space Grotesk',system-ui,sans-serif;letter-spacing:normal;text-transform:none;font-style:normal;text-indent:0}
+#mms p,#mms li,#mms label,#mms input,#mms select,#mms textarea,#mms button,#mms a,#mms .msg{font-size:calc(16px*var(--z));line-height:1.5}
+#mms p,#mms li,#mms label,#mms h1,#mms h2,#mms h3{text-align:left;overflow-wrap:anywhere;margin-left:0;margin-right:0}
+#mms p{margin:4px 0}
+#mms h1{font:700 calc(19px*var(--z))/1.2 'Space Grotesk',system-ui,sans-serif;text-transform:uppercase;margin:0}
+#mms h2{font-size:calc(21px*var(--z));line-height:1.25;font-weight:700;margin:0 0 10px}
+#mms h3{font-size:calc(18px*var(--z));line-height:1.3;margin:8px 0}
+#mms br{line-height:1}
+#mms img{max-width:100%}
+
+#mms .mcard{background:#fff;border:3px solid var(--ink);box-shadow:4px 4px 0 var(--ink);border-radius:12px;padding:14px;margin:12px 4px;width:auto}
+#mms .hd{display:flex;gap:12px;align-items:center;background:var(--l);position:relative;overflow:hidden}
+#mms .hd>div{flex:1 1 0}
+#mms .hd img{width:52px;height:52px;flex:none;object-fit:contain;background:#fff;border:3px solid var(--ink);border-radius:50%;padding:3px}
+#mms .hd p{font-size:calc(13px*var(--z));line-height:1.4}
+
+#mms .mbtn{display:flex!important;align-items:center;justify-content:center;width:100%;min-height:48px;text-align:center;text-decoration:none;font:700 calc(15px*var(--z))/1.25 'Space Grotesk',sans-serif;background:var(--y);color:var(--ink);border:3px solid var(--ink);border-radius:10px;padding:8px 10px;box-shadow:3px 3px 0 var(--ink);cursor:pointer;transition:.1s;white-space:normal;overflow-wrap:anywhere;transform:none!important;rotate:none!important;margin:0!important;float:none!important}
+#mms .mbtn:active{translate:3px 3px;box-shadow:0 0 0 var(--ink)}
+#mms .mbtn:disabled{opacity:.4;cursor:not-allowed;box-shadow:none}
+#mms .c0{background:var(--p)}#mms .c1{background:var(--m)}#mms .c2{background:var(--b)}#mms .c3{background:var(--o)}#mms .c4{background:var(--l)}
+
+#mms .mnav{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px;margin:0 4px}
+#mms .mnav>:last-child:nth-child(odd){grid-column:1/-1}
+#mms .mnav .mbtn.on{outline:3px solid var(--ink);outline-offset:2px}
+#mms .macts{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px;margin:14px 0}
+#mms .macts>:last-child:nth-child(odd){grid-column:1/-1}
+#mms .mtools{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px;margin:0 4px 12px}
+#mms .mtools .mbtn{min-height:44px;padding:6px 10px}
+#mms .mtools #fsb{grid-column:1/-1}
+#mms .mpager{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px;margin:14px 4px 4px}
+
+#mms label{display:block;font-weight:700;margin:10px 0}
+#mms input,#mms select,#mms textarea{display:block;width:100%!important;max-width:100%!important;margin:4px 0 0!important;font:inherit;font-size:max(16px,calc(16px*var(--z)));padding:10px 12px;border:3px solid var(--ink);border-radius:10px;background:#fffdf5}
+#mms textarea{min-height:90px!important;height:auto;resize:vertical}
+#mms input:focus,#mms select:focus,#mms textarea:focus{outline:none;background:var(--y)}
+#mms #f{display:grid;grid-template-columns:minmax(0,1fr);column-gap:16px}
+#mms .chk{display:flex;align-items:center;gap:10px}
+#mms input[type=checkbox]{width:24px!important;height:24px;margin:0!important;flex:none;accent-color:#1b1b1b}
+
+#mms .msg{margin-top:10px;padding:10px;border:3px solid var(--ink);border-radius:10px;font-weight:600}
+#mms .msg h2{font-size:calc(20px*var(--z));margin:6px 0}
+#mms .ok{background:var(--m)}#mms .er{background:var(--p)}
+#mms .hint{background:var(--b);border:3px solid var(--ink);border-radius:10px;padding:10px 12px;margin:0 0 14px;font-size:calc(15px*var(--z));line-height:1.55}
+
+#mms .steps{display:grid;grid-template-columns:minmax(0,1fr);gap:6px;margin:14px 0}
+#mms .st{text-align:left;font-size:calc(14px*var(--z));line-height:1.3;font-weight:700;padding:8px 12px;border:3px solid var(--ink);border-radius:8px;background:#fff}
+#mms .st.on{background:var(--m)}#mms .st.now{background:var(--y)}
+
+#mms .mgrid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}
+#mms .stat{border:3px solid var(--ink);border-radius:12px;padding:8px;font-weight:700;font-size:calc(14px*var(--z));box-shadow:3px 3px 0 var(--ink)}#mms .stat b{display:block;font-size:calc(24px*var(--z))}
+#mms .mrow{border:3px solid var(--ink);border-radius:12px;padding:10px;margin:10px 0;background:#fffdf5;cursor:pointer;box-shadow:3px 3px 0 var(--ink);font-size:calc(15px*var(--z))}
+#mms .badge{display:inline-block;border:2px solid var(--ink);border-radius:20px;padding:1px 10px;background:var(--b);font-size:calc(13px*var(--z));font-weight:700}
+#mms .flt{display:grid;grid-template-columns:minmax(0,1fr);gap:8px}
+
+#mms .mview{overflow:hidden}#mms .mtrack{display:grid;grid-template-columns:minmax(0,1fr)}
+#mms .mslide{grid-area:1/1;min-width:0;padding:12px 4px}#mms .mslide>.mcard{margin:0}
+#mms .mslide:not(.act){visibility:hidden;height:0;padding:0;overflow:hidden}
+#mms .mslide.act{animation:mIn .3s ease}
+@keyframes mIn{from{opacity:0;transform:translateX(var(--dx,40px))}to{opacity:1;transform:none}}
+@media(prefers-reduced-motion:reduce){#mms .mslide.act{animation:none}}
+
+#mms .guide{background:var(--y)}
+#mms .guide summary{font-weight:700;font-size:calc(18px*var(--z));line-height:1.3;cursor:pointer;min-height:44px;display:flex;align-items:center}
+#mms .gl{list-style:none;margin:10px 0 0;padding:0;display:grid;gap:14px;counter-reset:g}
+#mms .gl li{counter-increment:g;position:relative;padding-left:42px;font-size:calc(16px*var(--z));line-height:1.5;min-height:34px}
+#mms .gl li:before{content:counter(g);position:absolute;left:0;top:0;width:30px;height:30px;border:2px solid var(--ink);border-radius:50%;background:#fff;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:15px}
+
+#mms .ft{text-align:center;font-weight:700;margin:12px 0 4px;font-size:calc(14px*var(--z))}
+#mms .adm{margin:160px 0 24px;text-align:center}
+#mms .adm a{display:inline-block;font-size:12px;color:var(--ink);opacity:.45;text-decoration:underline;padding:12px 16px}
+#mms.mfs .adm{display:none}
+#mms .sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+#mms :focus-visible{outline:4px solid #1b1b1b!important;outline-offset:3px}
+
+#mms.mfs,#mms:fullscreen{overflow-x:hidden;overflow-y:auto;max-width:none;border:0;background-color:#fffaf0}
+#mms.mfs{position:fixed;inset:0;z-index:2147483647;width:100%;height:100dvh;margin:0;border-radius:0;padding:max(8px,env(safe-area-inset-top)) max(8px,env(safe-area-inset-right)) max(8px,env(safe-area-inset-bottom)) max(8px,env(safe-area-inset-left));-webkit-overflow-scrolling:touch}
+
+@container (min-width:560px){
+ #mms .hd:after{content:"";position:absolute;right:-18px;top:-18px;width:70px;height:70px;border-radius:50%;background:var(--p);border:3px solid var(--ink)}
+ #mms .hd img{width:72px;height:72px}
+ #mms h1{font-size:calc(26px*var(--z))}
+ #mms .mcard{margin:16px 10px;padding:22px;box-shadow:6px 6px 0 var(--ink)}
+ #mms .mnav{grid-template-columns:repeat(4,minmax(0,1fr));gap:12px;margin:0 10px}
+ #mms .mnav>:last-child:nth-child(odd){grid-column:auto}
+ #mms .mtools{grid-template-columns:1fr 1fr 2fr;gap:12px;margin:0 10px 14px}
+ #mms .mtools #fsb{grid-column:auto}
+ #mms .mpager{gap:12px;margin:14px 10px 4px}
+ #mms .macts{grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:12px}
+ #mms .steps{grid-template-columns:repeat(5,minmax(0,1fr))}
+ #mms .st{text-align:center;padding:8px 4px}
+ #mms .mgrid{grid-template-columns:repeat(auto-fit,minmax(130px,1fr));gap:10px}
+ #mms .flt{grid-template-columns:repeat(3,minmax(0,1fr))}
+ #mms #f{grid-template-columns:repeat(2,minmax(0,1fr))}
+ #mms #f .full,#mms #f #fb,#mms #f #fm{grid-column:1/-1}
+ #mms .mslide{padding:16px 10px}
+}
+@media print{#mms>*:not(#pr){display:none}}
+</style>
+<style>html,body{margin:0;padding:0;background:#fffaf0}</style></head><body>
+<div id="mms"></div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+<script src="/config.js"></script>
+<script>
+const CFG={
+ API:'/api',          // backend ada di Worker yang sama
+ PUBLIC:'',    // kosongkan = otomatis memakai URL halaman ini
+ ADMIN_URL:'', // kosongkan = otomatis URL halaman ini + ?admin=1
+ WA:(window.MMS_CONFIG||{}).WA||'62XXXXXXXXXX',                                    // WhatsApp bengkel format 62
+ ADMIN:false};
+CFG.PUBLIC=CFG.PUBLIC||location.origin+location.pathname;CFG.ADMIN_URL=CFG.ADMIN_URL||CFG.PUBLIC+'?admin=1';
+const withT=(b,t)=>b+(b.includes('?')?'&':'?')+'t='+encodeURIComponent(t);
+const ST=['Menunggu','Pemeriksaan','Sedang Dikerjakan','Selesai','Sudah Diambil'];
+const $=s=>document.querySelector(s),R=$('#mms');
+const esc=s=>String(s==null?'':s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+const nWA=v=>{v=String(v).replace(/\D/g,'');if(v[0]==='0')v='62'+v.slice(1);else if(v[0]==='8')v='62'+v;return /^628\d{8,12}$/.test(v)?v:''};
+const note=(el,t,ok)=>{el.innerHTML=`<div class="msg ${ok?'ok':'er'}" role="${ok?'status':'alert'}">${esc(t)}</div>`};
+async function api(action,d){
+ const r=await fetch(CFG.API,{method:'POST',body:JSON.stringify(Object.assign({action,token:sessionStorage.mmsT},d))});
+ const j=await r.json();
+ if(!j.ok){if(j.auth){sessionStorage.removeItem('mmsT');adminView();}throw new Error(j.error||'Gagal')}
+ return j}
+const HEAD=`<header class="mcard hd"><img src="https://smkmuhiba.sch.id/Muhiba-Logo.png" alt="Logo SMK Muhammadiyah Bawang"><div><h1>MUHIBA MOTOR SERVICE</h1><p><b>SMK Muhammadiyah Bawang</b> \u00b7 Teknik Sepeda Motor</p></div></header><div class="mtools" role="group" aria-label="Pengaturan tampilan"><button type="button" class="mbtn" id="zm" aria-label="Perkecil ukuran tampilan">A-</button><button type="button" class="mbtn" id="zp" aria-label="Perbesar ukuran tampilan">A+</button><button type="button" class="mbtn c1" id="fsb" aria-pressed="false">Layar Penuh</button></div><div id="live" class="sr" role="status" aria-live="polite"></div>`;
+const FOOT=`<p class="ft">\u25b2 \u25cf \u25a0 Developed by @hndx07 \u25a0 \u25cf \u25b2</p>`;
+const steps=s=>{const i=ST.indexOf(s);return `<div class="steps" role="list">${ST.map((x,k)=>`<div role="listitem" ${k===i?'aria-current="step"':''} class="st ${k<i?'on':k===i?'now':''}">${k+1}. ${x}</div>`).join('')}</div>`};
+
+/* ================= PUBLIK ================= */
+const GUIDE=`<section class="mcard guide" aria-labelledby="gt"><details open><summary id="gt">Petunjuk untuk pelanggan</summary><ol class="gl"><li><b>Daftar servis.</b> Tekan tombol <b>Registrasi Servis</b>, isi semua kolom, lalu tekan <b>Kirim Pendaftaran</b>.</li><li><b>Catat nomor registrasi.</b> Nomor ini muncul setelah pendaftaran berhasil, contoh: TSM-20261123-001. Tekan <b>Salin Nomor</b> atau foto layarnya.</li><li><b>Bawa motor ke bengkel.</b> Antar motor Anda ke bengkel TSM SMK Muhammadiyah Bawang.</li><li><b>Pantau progres.</b> Tekan <b>Cek Status</b>, lalu masukkan nomor registrasi Anda.</li><li><b>Tunggu kabar.</b> Admin bisa menghubungi Anda lewat WhatsApp, jadi pastikan nomor yang diisi aktif.</li></ol></details></section>`;
+function pubView(){
+ R.innerHTML=HEAD.replace('<div class="mtools"',GUIDE+'<div class="mtools"')+`<nav class="mnav" aria-label="Menu utama">${[['home','Beranda'],['daftar','Registrasi Servis'],['status','Cek Status'],['info','Layanan & Kontak']].map((a,i)=>`<button class="mbtn c${i}" data-v="${a[0]}">${a[1]}</button>`).join('')}</nav>
+<div class="mview"><div class="mtrack"><div class="mslide" id="v-home"><section class="mcard"><h2>Servis motor dengan siswa TSM</h2><p>Daftar servis tanpa login, pantau progres pengerjaan secara langsung dari HP Anda.</p><br><button class="mbtn c1" data-v="daftar">Daftar Servis Sekarang</button></section></div>
+<div class="mslide" id="v-daftar"><section class="mcard"><h2>Registrasi Servis</h2><p class="hint">Isi semua kolom. Nomor WhatsApp harus aktif karena kabar servis dikirim ke nomor ini. Nomor rangka ada di bodi motor atau di STNK.</p><form id="f" novalidate>
+<label>Nama lengkap pemilik<input name="nama" autocomplete="name" aria-required="true" maxlength="80"></label>
+<label>Nomor WhatsApp aktif<input name="wa" autocomplete="tel" aria-required="true" inputmode="tel" placeholder="08xxxxxxxxxx"></label>
+<label class="full">Alamat lengkap<textarea name="alamat" autocomplete="street-address" aria-required="true" rows="2" maxlength="200"></textarea></label>
+<label>Plat nomor<input name="plat" autocomplete="off" aria-required="true" maxlength="12" placeholder="G 1234 AB"></label>
+<label>Nomor rangka<input name="rangka" autocomplete="off" aria-required="true" maxlength="25"></label>
+<label>Jenis/merek sepeda motor<input name="motor" autocomplete="off" aria-required="true" maxlength="50"></label>
+<label>Tahun pembuatan<input name="tahun" autocomplete="off" aria-required="true" inputmode="numeric" maxlength="4"></label>
+<label>Pilihan layanan<select name="layanan" aria-required="true"><option value="">Pilih layanan\u2026</option><option>Servis + Ganti Oli</option><option>Servis Saja</option></select></label>
+<button class="mbtn c1" id="fb">Kirim Pendaftaran</button><div id="fm"></div></form></section></div>
+<div class="mslide" id="v-status"><section class="mcard"><h2>Cek Status Servis</h2><p class="hint">Masukkan nomor registrasi dari bukti pendaftaran. Arti status: <b>Menunggu</b> = antre, <b>Pemeriksaan</b> = motor sedang diperiksa, <b>Sedang Dikerjakan</b> = sedang diservis, <b>Selesai</b> = siap diambil, <b>Sudah Diambil</b> = motor sudah Anda ambil.</p><form id="s"><label>Nomor registrasi<input name="q" placeholder="TSM-20261123-001"></label><button class="mbtn c2">Cek Status</button></form><div id="sm"></div></section></div>
+<div class="mslide" id="v-info"><section class="mcard"><h2>Layanan & Kontak</h2><p>\u2022 Servis + Ganti Oli</p><p>\u2022 Servis Saja</p><br><p>Bengkel TSM SMK Muhammadiyah Bawang.</p><br><a class="mbtn c3" id="wab" target="_blank" rel="noopener">Hubungi via WhatsApp</a></section></div></div></div><div class="mpager"><button type="button" class="mbtn" id="pv"><span aria-hidden="true">\u25c0</span> Sebelumnya</button><button type="button" class="mbtn" id="nx">Berikutnya <span aria-hidden="true">\u25b6</span></button></div>`+FOOT+`<div class="adm"><a href="${CFG.ADMIN_URL}" rel="nofollow">Admin</a></div>`;
+ $('#wab').href='https://wa.me/'+CFG.WA;
+ R.onclick=e=>{const b=e.target.closest('[data-v]');if(b)go(b.dataset.v)};
+ $('#f').onsubmit=reg;$('#s').onsubmit=e=>{e.preventDefault();stat(e.target.q.value)};
+ initSlides();const t=new URLSearchParams(location.search).get('t');if(t){go('status');$('#s').q.value=t;stat(t)}}
+const ORD=['home','daftar','status','info'];let cur=0;
+const LBL=['Beranda','Registrasi Servis','Cek Status','Layanan dan Kontak'];
+function go(v){const n=Math.max(0,Math.min(ORD.length-1,typeof v==='number'?v:ORD.indexOf(v)));
+ R.style.setProperty('--dx',(n>=cur?40:-40)+'px');const ch=n!==cur;cur=n;if(ch)$('#live').textContent='Bagian '+(cur+1)+' dari 4: '+LBL[cur];
+ ORD.forEach((k,i)=>{const e=$('#v-'+k);e.inert=i!==cur;e.classList.remove('act');if(i===cur){void e.offsetWidth;e.classList.add('act')}});
+ document.querySelectorAll('.mnav [data-v]').forEach((b,i)=>{b.classList.toggle('on',i===cur);if(i===cur)b.setAttribute('aria-current','page');else b.removeAttribute('aria-current')});
+ $('#pv').disabled=cur===0;$('#nx').disabled=cur===ORD.length-1}
+function initSlides(){$('#pv').onclick=()=>go(cur-1);$('#nx').onclick=()=>go(cur+1);
+ let sx=0,sy=0;const V=$('.mview');
+ V.addEventListener('touchstart',e=>{sx=e.touches[0].clientX;sy=e.touches[0].clientY},{passive:true});
+ V.addEventListener('touchend',e=>{if(/INPUT|TEXTAREA|SELECT/.test(e.target.tagName))return;const dx=e.changedTouches[0].clientX-sx,dy=e.changedTouches[0].clientY-sy;if(Math.abs(dx)>70&&Math.abs(dx)>Math.abs(dy)*1.5)go(cur+(dx<0?1:-1))},{passive:true});
+ go(0)}
+let Z=1;try{Z=+localStorage.mmsF||1}catch(e){}
+const clampZ=v=>Math.min(1.4,Math.max(.85,Math.round(v*100)/100));
+function applyZ(){R.style.setProperty('--z',Z)}
+function zoom(d){Z=clampZ(Z+d);applyZ();const l=$('#live');if(l)l.textContent='Ukuran teks '+Math.round(Z*100)+' persen';try{localStorage.mmsF=Z}catch(e){}}
+Z=clampZ(Z);applyZ();
+function fs(){const on=R.classList.toggle('mfs'),b=$('#fsb');R.scrollTop=0;if(b){b.textContent=on?'Keluar Layar Penuh':'Layar Penuh';b.setAttribute('aria-pressed',on)}
+ if(on){document.body.style.overflow='hidden';try{const f=R.requestFullscreen||R.webkitRequestFullscreen;f&&f.call(R)&&f.call&&0}catch(e){}}
+ else{document.body.style.overflow='';if(document.fullscreenElement)document.exitFullscreen()}
+ }
+document.addEventListener('fullscreenchange',()=>{if(!document.fullscreenElement&&R.classList.contains('mfs'))fs()});
+document.addEventListener('click',e=>{if(e.target.closest('#fsb'))fs();if(e.target.closest('#zp'))zoom(.1);if(e.target.closest('#zm'))zoom(-.1)});
+document.addEventListener('keydown',e=>{if(!$('.mview')||/INPUT|TEXTAREA|SELECT/.test(document.activeElement.tagName))return;if(e.key==='ArrowRight')go(cur+1);if(e.key==='ArrowLeft')go(cur-1)});
+async function reg(e){
+ e.preventDefault();const f=e.target,d=Object.fromEntries(new FormData(f)),m=$('#fm');
+ if(Object.values(d).some(v=>!String(v).trim()))return note(m,'Semua data wajib diisi.');
+ if(!nWA(d.wa))return note(m,'Nomor WhatsApp tidak valid.');
+ if(!/^\d{4}$/.test(d.tahun))return note(m,'Tahun pembuatan harus 4 digit.');
+ if(!confirm('Kirim pendaftaran servis untuk '+d.plat.toUpperCase()+'?'))return;
+ const b=$('#fb');b.disabled=true;b.textContent='Menyimpan\u2026';m.innerHTML='';
+ try{const j=await api('register',d);
+  m.innerHTML=`<div class="msg ok"><b>Pendaftaran berhasil!</b><br>Nomor registrasi:<h2 id="rn">${esc(j.nomor_registrasi)}</h2>${esc(j.tanggal_daftar)}<br>Simpan nomor ini untuk cek status.<div class="macts"><button type="button" class="mbtn" id="cp">Salin Nomor</button><a class="mbtn c3" target="_blank" rel="noopener" href="https://wa.me/${CFG.WA}?text=${encodeURIComponent('Halo, saya sudah mendaftar servis. No. registrasi: '+j.nomor_registrasi)}">Kirim ke WhatsApp</a></div></div>`;
+  $('#cp').onclick=()=>navigator.clipboard.writeText(j.nomor_registrasi).then(()=>$('#cp').textContent='Tersalin \u2713');
+  f.reset()}catch(x){note(m,x.message)}
+ b.disabled=false;b.textContent='Kirim Pendaftaran'}
+async function stat(q){const m=$('#sm');m.innerHTML='<div class="msg">Memuat\u2026</div>';
+ try{const j=await api('status',{q}),s=j.data;
+  m.innerHTML=`<br><h3>${esc(s.nomor_registrasi)}</h3><p>${esc(s.nama_pemilik)} \u00b7 ${esc(s.jenis_motor)} \u00b7 ${esc(s.plat_nomor)}</p><p>${esc(s.jenis_layanan)} \u00b7 Daftar ${esc(s.tanggal_daftar)}</p>${steps(s.status_servis)}<p><b>Catatan teknisi:</b> ${esc(s.catatan_teknisi||'-')}</p><br><b>Riwayat</b>${j.riwayat.map(h=>`<p>\u2022 ${esc(h.tanggal)} \u2014 <b>${esc(h.status)}</b>${h.catatan?' ('+esc(h.catatan)+')':''}</p>`).join('')}`}
+ catch(x){note(m,x.message)}}
+
+/* ================= ADMIN ================= */
+let D=[];
+function adminView(){
+ if(!sessionStorage.mmsT){R.innerHTML=HEAD+`<section class="mcard"><h2>Login Admin</h2><form id="lg"><label>Username<input name="user" autocomplete="username" autocapitalize="none" autocorrect="off" spellcheck="false"></label><label>Password<input name="pass" type="password" autocomplete="current-password" autocapitalize="none" autocorrect="off" spellcheck="false"></label><label class="chk"><input type="checkbox" id="sp"> Tampilkan password</label><button class="mbtn c1">Masuk</button><div id="lm"></div></form><div class="macts"><a class="mbtn c2" id="publ" href="${CFG.PUBLIC}">Pelanggan: Lihat Status Servis</a></div></section>`+FOOT;
+  {const t=new URLSearchParams(location.search).get('t');if(t)$('#publ').href=CFG.PUBLIC+'?t='+encodeURIComponent(t)}
+  $('#sp').onchange=e=>{$('#lg').pass.type=e.target.checked?'text':'password'};
+  $('#lg').onsubmit=async e=>{e.preventDefault();try{const j=await api('login',Object.fromEntries(new FormData(e.target)));sessionStorage.mmsT=j.token;sessionStorage.mmsU=j.user;adminView()}catch(x){note($('#lm'),x.message)}};return}
+ R.innerHTML=HEAD+`<nav class="mnav" aria-label="Menu utama"><button class="mbtn c0" id="rf">Muat Ulang</button><button class="mbtn c2" id="pw">Ganti Password</button><button class="mbtn c3" id="lo">Keluar</button></nav><section class="mcard"><div class="mgrid" id="stats"></div></section>
+<section class="mcard"><div class="flt"><input id="fq" placeholder="Cari nama / plat / no. registrasi"><select id="fs"><option value="">Semua status</option>${ST.map(s=>`<option>${s}</option>`).join('')}</select><input id="fd" type="date"></div><div id="ls"></div></section><section class="mcard" id="dt" hidden></section><section id="pwc" class="mcard" hidden></section>`+FOOT;
+ $('#rf').onclick=load;$('#lo').onclick=async()=>{try{await api('logout')}catch(e){}sessionStorage.clear();adminView()};
+ $('#pw').onclick=pwForm;['fq','fs','fd'].forEach(i=>$('#'+i).oninput=draw);
+ const t=new URLSearchParams(location.search).get('t');if(t)$('#fq').value=t;load()}
+async function load(){try{D=(await api('list')).data;draw();const t=new URLSearchParams(location.search).get('t'),x=t&&D.find(v=>v.token_qr===t);if(x)detail(x.id_servis)}catch(x){$('#ls').innerHTML='<div class="msg er">'+esc(x.message)+'</div>'}}
+function draw(){
+ const c=s=>D.filter(x=>x.status_servis===s).length,col=['var(--b)','var(--y)','var(--o)','var(--m)','var(--p)'];
+ $('#stats').innerHTML=`<div class="stat" style="background:var(--l)"><b>${D.length}</b>Total</div>`+[0,2,3,4].map(i=>`<div class="stat" style="background:${col[i]}"><b>${c(ST[i])}</b>${ST[i]}</div>`).join('');
+ const q=$('#fq').value.toLowerCase(),s=$('#fs').value,d=$('#fd').value;
+ const L=D.filter(x=>(!q||[x.nama_pemilik,x.plat_nomor,x.nomor_registrasi,x.token_qr].some(v=>v.toLowerCase().includes(q)))&&(!s||x.status_servis===s)&&(!d||x.tanggal_daftar.slice(0,10)===d));
+ $('#ls').innerHTML=L.map(x=>`<div class="mrow" data-id="${esc(x.id_servis)}"><b>${esc(x.nomor_registrasi)}</b> <span class="badge">${esc(x.status_servis)}</span><br>${esc(x.nama_pemilik)} \u00b7 ${esc(x.jenis_motor)} \u00b7 ${esc(x.plat_nomor)}</div>`).join('')||'<p>Tidak ada data.</p>';
+ $('#ls').onclick=e=>{const r=e.target.closest('.mrow');if(r)detail(r.dataset.id)}}
+function waMsg(x){const lead={Menunggu:'pendaftaran servis Anda sudah kami terima.','Pemeriksaan':'motor Anda sedang dalam pemeriksaan.','Sedang Dikerjakan':'motor Anda sedang kami kerjakan.','Selesai':'servis motor Anda sudah selesai, silakan diambil.','Sudah Diambil':'terima kasih, motor sudah diambil.'}[x.status_servis];
+ return `Halo ${x.nama_pemilik}, ${lead}\n\nNo. Registrasi: ${x.nomor_registrasi}\nMotor: ${x.jenis_motor} (${x.plat_nomor})\nLayanan: ${x.jenis_layanan}\nStatus: ${x.status_servis}\nCatatan teknisi: ${x.catatan_teknisi||'-'}\n\nCek status: ${CFG.PUBLIC}?t=${x.token_qr}\n- MUHIBA MOTOR SERVICE`}
+function detail(id){
+ const x=D.find(v=>v.id_servis===id),p=$('#dt');p.hidden=false;
+ p.innerHTML=`<h2>${esc(x.nomor_registrasi)}</h2><p>${esc(x.nama_pemilik)} \u00b7 WA ${esc(x.nomor_whatsapp)}</p><p>${esc(x.jenis_motor)} (${esc(x.tahun_pembuatan)}) \u00b7 ${esc(x.plat_nomor)} \u00b7 Rangka ${esc(x.nomor_rangka)}</p><p>${esc(x.jenis_layanan)} \u00b7 ${esc(x.alamat)}</p>
+<label>Status<select id="ds">${ST.map(s=>`<option ${s===x.status_servis?'selected':''}>${s}</option>`).join('')}</select></label>
+<label>Catatan teknisi<textarea id="dn" rows="3" maxlength="500">${esc(x.catatan_teknisi)}</textarea></label>
+<div class="macts"><button class="mbtn c1" id="sv">Simpan Perubahan</button><button class="mbtn c2" id="qr">Buat QR</button><button class="mbtn c3" id="rn">Perbarui Token QR</button></div><div id="dm"></div><div id="qa"></div>
+<label>Pesan WhatsApp (bisa diedit)<textarea id="wm" rows="8"></textarea></label><button class="mbtn c0" id="wa">Buka WhatsApp</button>`;
+ const wm=$('#wm');wm.value=waMsg(x);p.scrollIntoView({behavior:'smooth'});
+ $('#sv').onclick=async()=>{const s=$('#ds').value;if(!confirm(`Ubah status ${x.nomor_registrasi} menjadi "${s}"?`))return;
+  try{const j=await api('update',{id:id,status:s,catatan:$('#dn').value});Object.assign(x,j.data);note($('#dm'),'Tersimpan. Perbarui pesan WA di bawah lalu kirim.',1);wm.value=waMsg(x);draw()}catch(e){note($('#dm'),e.message)}};
+ $('#rn').onclick=async()=>{if(!confirm('Token lama tidak berlaku lagi. Lanjutkan?'))return;try{x.token_qr=(await api('renew',{id})).token;note($('#dm'),'Token diperbarui. Buat ulang QR.',1);wm.value=waMsg(x)}catch(e){note($('#dm'),e.message)}};
+ $('#qr').onclick=()=>{const a=$('#qa');a.innerHTML='<div id="qc" style="margin:12px 0"></div><div class="macts"><button class="mbtn" id="qd">Unduh PNG</button><button class="mbtn" id="qp">Cetak</button></div>';
+  new QRCode($('#qc'),{text:withT(CFG.ADMIN_URL,x.token_qr),width:220,height:220});
+  const png=()=>$('#qc canvas').toDataURL('image/png');
+  setTimeout(()=>{$('#qd').onclick=()=>{const l=document.createElement('a');l.href=png();l.download=x.nomor_registrasi+'.png';l.click()};
+   $('#qp').onclick=()=>{const w=window.open('');w.document.write('<body style="text-align:center;font-family:sans-serif"><img src="'+png()+'"><h3>'+esc(x.nomor_registrasi)+'</h3><p>'+esc(x.plat_nomor)+'</p>');w.document.close();w.print()}},200)};
+ $('#wa').onclick=()=>{const n=nWA(x.nomor_whatsapp);if(!n)return note($('#dm'),'Nomor WhatsApp tidak valid.');window.open('https://wa.me/'+n+'?text='+encodeURIComponent(wm.value),'_blank','noopener')}}
+function pwForm(){const p=$('#pwc');p.hidden=false;p.innerHTML=`<h2>Ganti Password</h2><form id="pf"><label>Password lama<input name="lama" type="password" autocomplete="current-password"></label><label>Password baru (min. 10 karakter)<input name="baru" type="password" autocomplete="new-password"></label><button class="mbtn c1">Simpan</button><div id="pm"></div></form>`;
+ $('#pf').onsubmit=async e=>{e.preventDefault();try{await api('chpass',Object.fromEntries(new FormData(e.target)));note($('#pm'),'Password diganti.',1);e.target.reset()}catch(x){note($('#pm'),x.message)}}}
+
+(CFG.ADMIN||new URLSearchParams(location.search).get('admin')==='1')?adminView():pubView();
+</script>
+</body></html>

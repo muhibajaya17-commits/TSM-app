@@ -1,0 +1,23 @@
+name = "muhiba-motor-service"
+main = "src/index.js"
+compatibility_date = "2025-11-01"
+
+# Halaman depan (folder public) disajikan otomatis; hanya /api yang lewat Worker.
+[assets]
+directory = "./public"
+binding = "ASSETS"
+run_worker_first = ["/api"]
+
+[vars]
+ADMIN_USER = "admin"   # username admin awal; password awal lewat secret ADMIN_PASS
+
+# Isi database_id dari hasil: npx wrangler d1 create muhiba-db
+[[d1_databases]]
+binding = "DB"
+database_name = "muhiba-db"
+database_id = "ISI_DATABASE_ID_D1"
+
+# Isi id dari hasil: npx wrangler kv namespace create KV
+[[kv_namespaces]]
+binding = "KV"
+id = "ISI_ID_KV"
