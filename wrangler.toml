@@ -1,4 +1,4 @@
-name = "muhiba-motor-service"
+name = "tsm-app"
 main = "src/index.js"
 compatibility_date = "2025-11-01"
 
