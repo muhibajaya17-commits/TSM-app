@@ -1,15 +1,6 @@
 {
-  "name": "muhiba-motor-service",
-  "version": "1.0.0",
+  "name": "muhiba-statis",
   "private": true,
-  "type": "module",
-  "scripts": {
-    "dev": "wrangler dev",
-    "deploy": "wrangler deploy",
-    "db:init": "wrangler d1 execute muhiba-db --remote --file=schema.sql",
-    "db:init:local": "wrangler d1 execute muhiba-db --local --file=schema.sql"
-  },
-  "devDependencies": {
-    "wrangler": "^4.0.0"
-  }
+  "scripts": { "deploy": "wrangler deploy" },
+  "devDependencies": { "wrangler": "^4.0.0" }
 }
